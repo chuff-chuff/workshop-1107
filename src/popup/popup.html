@@ -2,22 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>仮の名前</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 16px;
-      min-width: 200px;
-      font-family: system-ui, sans-serif;
-      font-size: 16px;
-      color: #1a1a1a;
-      background: #ffffff;
-    }
-  </style>
+  <title data-i18n="name">仮の名前</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <main>
-    <p id="status" role="status">準備OK</p>
+    <h1 data-i18n="name">仮の名前</h1>
+
+    <button type="button" id="toggle" aria-pressed="false" disabled>
+      <span data-i18n="popupToggle">代替テキストを表示</span>
+      <span class="state" aria-hidden="true">
+        <span class="state-on" data-i18n="popupStateOn">オン</span>
+        <span class="state-off" data-i18n="popupStateOff">オフ</span>
+      </span>
+    </button>
+
+    <fieldset id="mode" disabled>
+      <legend data-i18n="popupModeLegend">表示のしかた</legend>
+      <label>
+        <input type="radio" name="mode" value="hide" checked>
+        <span data-i18n="popupModeHide">画像を消す</span>
+      </label>
+      <label>
+        <input type="radio" name="mode" value="overlay">
+        <span data-i18n="popupModeOverlay">画像も表示する</span>
+      </label>
+    </fieldset>
+
+    <p id="unsupported" role="status" hidden data-i18n="popupUnsupported">このページでは使えません</p>
   </main>
   <script src="popup.js"></script>
 </body>
