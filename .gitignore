@@ -5,3 +5,5 @@ node_modules/
 *.zip
 *.crx
 *.pem
+*:Zone.Identifier
+*:com.dropbox.attrs
