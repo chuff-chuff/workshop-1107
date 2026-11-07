@@ -1,0 +1,14 @@
+{
+  "name": "workshop-1107",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome拡張機能の開発用設定（拡張機能本体には含まれない）",
+  "license": "MIT",
+  "scripts": {
+    "build:vendor": "esbuild scripts/vendor-entry.js --bundle --format=iife --global-name=domAccessibilityApi --target=chrome120 --legal-comments=inline --banner:js=\"/* dom-accessibility-api 0.7.1 (MIT License) https://github.com/eps1lon/dom-accessibility-api - bundled by esbuild. Do not edit; run 'npm run build:vendor'. */\" --outfile=src/vendor/dom-accessibility-api.js"
+  },
+  "devDependencies": {
+    "dom-accessibility-api": "0.7.1",
+    "esbuild": "0.28.2"
+  }
+}
